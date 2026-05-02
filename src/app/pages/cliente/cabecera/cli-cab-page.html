@@ -1,10 +1,22 @@
 <h2>CLIENTE:</h2>
 <div class="mb-3">
   <label class="form-label">Nombre y Apellidos</label>
-  <input type="text" class="form-control" placeholder="Nombre y apelligos">
+  <input type="text" class="form-control" placeholder="Nombre y apelligos"
+  [value]="nombre()"
+  #txtName
+  (change)="nombre.set(txtName.value)"
+  (input)="nombre.set(txtName.value)"
+  >
 </div>
 <div class="mb-3">
   <label class="form-label">Edad</label>
-  <input type="number" class="form-control" placeholder="Edad cliente">
+  <input type="number" class="form-control" placeholder="Edad cliente"
+   [value]="edad()"
+   #txtEdad
+   (change)="edad.set(+txtEdad.value)"
+  (input)="edad.set(+txtEdad.value)"
+  >
 </div>
-<button type="button" class="btn btn-success">Success</button>
+
+<button type="button" class="btn btn-success"
+  (click)="registrar()">REGISTRAR</button>
