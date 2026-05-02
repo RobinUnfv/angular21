@@ -1,0 +1,25 @@
+<h1>DragonBall Page</h1>
+<hr/>
+<section class="row" >
+  <div class="col-12 col-sm-6" >
+       <h3>Agregar: {{personaje()}}</h3>
+       <input type="text" class="form-control" placeholder="Nombre"
+        [value]="personaje()"
+        #txtNombre
+        (change)="personaje.set(txtNombre.value)"
+       />
+       <input type="number" class="form-control mt-2" placeholder="Poder"
+        [value]="poder()"
+        #txtPoder
+        (change)="poder.set(+txtPoder.value)"
+       />
+       <button class="btn btn-primary mt-2"
+        (click)="addPersonaje()"
+       >Agregar</button>
+  </div>
+
+  <div class="col-12 col-sm-6" >
+    <app-listdragon-page [characters]="characters()" />
+  </div>
+
+</section>
