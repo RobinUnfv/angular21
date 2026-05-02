@@ -1,0 +1,9 @@
+<h2>DETALLE:</h2>
+<ul class="list-group">
+  @for (cliente of clientes(); track cliente.id; let idx = $index) {
+    <li class="list-group-item">
+      {{idx + 1}} - {{cliente.nombre}} ({{cliente.edad}} años)
+    </li>
+  }
+
+</ul>
